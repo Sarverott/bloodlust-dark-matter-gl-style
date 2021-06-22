@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Dark Matter",
+  "name": "Bloodlust Dark Matter",
   "metadata": {
     "mapbox:autocomposite": false,
     "mapbox:groups": {
@@ -17,8 +17,10 @@
     "mapbox:type": "template",
     "openmaptiles:mapbox:owner": "openmaptiles",
     "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t",
-    "openmaptiles:version": "3.x"
+    "openmaptiles:version": "3.x",
+    "maputnik:renderer": "mbgljs"
   },
+  "light": {"anchor": "viewport"},
   "sources": {
     "openmaptiles": {
       "type": "vector",
@@ -420,14 +422,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "oneway",
-          1
-        ]
-      ],
+      "filter": ["all", ["==", "oneway", 1]],
       "layout": {
         "symbol-placement": "line",
         "icon-image": "oneway",
@@ -435,22 +430,10 @@
         "icon-padding": 2,
         "icon-rotation-alignment": "map",
         "icon-rotate": 0,
-        "icon-size": {
-          "stops": [
-            [
-              15,
-              0.5
-            ],
-            [
-              19,
-              1
-            ]
-          ]
-        }
+        "icon-size": {"stops": [[15, 0.5], [19, 1]]},
+        "visibility": "visible"
       },
-      "paint": {
-        "icon-opacity": 0.5
-      }
+      "paint": {"icon-opacity": 0.5}
     },
     {
       "id": "road_oneway_opposite",
@@ -458,14 +441,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "oneway",
-          -1
-        ]
-      ],
+      "filter": ["all", ["==", "oneway", -1]],
       "layout": {
         "symbol-placement": "line",
         "icon-image": "oneway",
@@ -473,22 +449,9 @@
         "icon-padding": 2,
         "icon-rotation-alignment": "map",
         "icon-rotate": 180,
-        "icon-size": {
-          "stops": [
-            [
-              15,
-              0.5
-            ],
-            [
-              19,
-              1
-            ]
-          ]
-        }
+        "icon-size": {"stops": [[15, 0.5], [19, 1]]}
       },
-      "paint": {
-        "icon-opacity": 0.5
-      }
+      "paint": {"icon-opacity": 0.5}
     },
     {
       "id": "highway_motorway_subtle",
@@ -643,7 +606,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgba(80, 78, 78, 1)",
+        "text-color": "rgba(255, 254, 254, 1)",
         "text-halo-blur": 0,
         "text-halo-color": "rgba(0, 0, 0, 1)",
         "text-halo-width": 1,
@@ -748,7 +711,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(168, 113, 113, 1)",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(0,0,0,0.7)",
         "text-halo-width": 1
@@ -773,7 +736,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(168, 100, 100, 1)",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(0,0,0,0.7)",
         "text-halo-width": 1
@@ -800,7 +763,7 @@
       },
       "paint": {
         "icon-opacity": 0.7,
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(147, 52, 52, 1)",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(0,0,0,0.7)",
         "text-halo-width": 1
@@ -828,7 +791,7 @@
       },
       "paint": {
         "icon-opacity": 0.7,
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(249, 113, 113, 1)",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(0,0,0,0.7)",
         "text-halo-width": 1
@@ -861,7 +824,7 @@
       },
       "paint": {
         "icon-opacity": 0.7,
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(255, 0, 0, 1)",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(0,0,0,0.7)",
         "text-halo-width": 1
@@ -894,9 +857,9 @@
       },
       "paint": {
         "icon-opacity": 0.7,
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(255, 0, 0, 1)",
         "text-halo-blur": 1,
-        "text-halo-color": "rgba(0,0,0,0.7)",
+        "text-halo-color": "rgba(255, 0, 0, 0.7)",
         "text-halo-width": 1
       }
     },
@@ -916,9 +879,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgb(101,101,101)",
+        "text-color": "rgba(255, 95, 95, 1)",
         "text-halo-blur": 1,
-        "text-halo-color": "rgba(0,0,0,0.7)",
+        "text-halo-color": "rgba(102, 102, 102, 0.7)",
         "text-halo-width": 1
       }
     },
@@ -970,8 +933,8 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgb(101,101,101)",
-        "text-halo-color": "rgba(0,0,0,0.7)",
+        "text-color": "rgba(255, 255, 255, 1)",
+        "text-halo-color": "rgba(11, 2, 2, 0.7)",
         "text-halo-width": 1.4
       }
     },
@@ -998,11 +961,13 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "rgb(101,101,101)",
-        "text-halo-color": "rgba(0,0,0,0.7)",
+        "text-color": "rgba(255, 255, 255, 1)",
+        "text-halo-color": "rgba(0, 0, 0, 0.7)",
         "text-halo-width": 1.4
       }
     }
   ],
-  "id": "dark-matter"
+  "id": "bloodlust-dark-matter",
+  "owner": "Sett Sarverott"
 }
+
