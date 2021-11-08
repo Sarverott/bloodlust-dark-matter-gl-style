@@ -1,3 +1,4 @@
+*mod: more contrasts using strong shades of red, some shades of whites and maximum reduction of background brightness*
 # Bloodlust Dark Matter
 
 Modified Mapbox GL basemap style useful for data visualizations. The cartography is based on the
